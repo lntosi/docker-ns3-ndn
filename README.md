@@ -1,4 +1,6 @@
 # docker-ns3-ndn
+hub.docker:
+	docker pull lntosi/ubuntu18-ns3-ndn
 
 build:
 	docker build -t ubuntu18-ns3-ndn .
