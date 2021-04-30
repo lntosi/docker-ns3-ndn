@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
-MAINTAINER Lucas Tosi <tosi@stefaninirafael.com>
-LABEL Description="Docker image for NS-3 Network Simulator - FAPESP"
+MAINTAINER Lucas Tosi <lntosi@hotmail.com>
+LABEL Description="Docker image for NS-3 and ndnSIM"
 ENV DEBIAN_FRONTEND noninteractive
 
 # Pre-requisites:
