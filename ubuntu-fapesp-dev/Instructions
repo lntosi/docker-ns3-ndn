@@ -1,13 +1,12 @@
+How to build:
 docker build \
 --build-arg username=${USER} \
 --build-arg uid=$(id -u) \
 --build-arg gid=$(id -g) \
--t ubuntu-fapesp-dev .
+-t ubuntu-dev .
 
-docker run -it --rm --name container_fapesp -e DISPLAY=$DISPLAY \
+How to run the container:
+docker run -it --rm --name container_dev -e DISPLAY=$DISPLAY \
 -v "${HOME}/.Xauthority:${HOME}/.Xauthority:rw" \
 -v "/tmp/.X11-unix:/tmp/.X11-unix" \
--v "${HOME}/source/ns-3.30.1/scratch:/simulators/source/ns-3.30.1/scratch" \
--v "${HOME}/ndnSIM/ns-3/scratch:/simulators/ndnSIM/ns-3/scratch" \
--v "${HOME}/Documentos/ndnlua:/simulators/ndnSIM/.local/lib/wireshark/plugins/2.6" \
-ubuntu-fapesp-dev
+ubuntu-dev
