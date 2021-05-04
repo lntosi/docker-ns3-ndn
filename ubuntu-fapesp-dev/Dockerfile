@@ -1,6 +1,6 @@
-FROM lntosi/ubuntu-fapesp-app:latest
-MAINTAINER Lucas Tosi <tosi@stefaninirafael.com>
-LABEL Description="Docker image for Developers - FAPESP"
+FROM lntosi/ubuntu-app:latest
+MAINTAINER Lucas Tosi <lntosi@hotmail.com>
+LABEL Description="Docker image for Developers"
 ENV DEBIAN_FRONTEND noninteractive
 
 ARG username
