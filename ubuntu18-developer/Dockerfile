@@ -1,4 +1,4 @@
-FROM lntosi/ubuntu-app:latest
+FROM ubuntu18-simulators:latest
 MAINTAINER Lucas Tosi <lntosi@hotmail.com>
 LABEL Description="Docker image for Developers"
 ENV DEBIAN_FRONTEND noninteractive
