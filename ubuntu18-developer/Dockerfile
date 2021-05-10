@@ -1,4 +1,4 @@
-FROM ubuntu18-simulators:latest
+FROM ubuntu18-ns3-ndn:latest
 MAINTAINER Lucas Tosi <lntosi@hotmail.com>
 LABEL Description="Docker image for Developers"
 ENV DEBIAN_FRONTEND noninteractive

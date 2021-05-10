@@ -1,0 +1,2 @@
+How to build:
+docker build -t ubuntu18-ns3-ndn .

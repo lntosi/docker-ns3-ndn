@@ -2,11 +2,11 @@
 
 ## Follow these instructions to run this project:
 
-1. Build the ubuntu18-simulators Dockerfile to create the Ubuntu image with all the required dependencies to run NS-3 and ndnSIM;
+1. Build the ubuntu18-ns3-ndn Dockerfile to create the Ubuntu image with all the required dependencies to run NS-3 and ndnSIM;
 
-docker build -t ubuntu18-simulators .
+docker build -t ubuntu18-ns3-ndn .
 
-2. Build the ubuntu18-developer Dockerfile. If you have uploaded the ubuntu18-simulators image to Docker Hub, it will be necessary to change the repository in line #1 of the Dockerfile (FROM ubuntu18-simulators:latest);
+2. Build the ubuntu18-developer Dockerfile. If you have uploaded the ubuntu18-ns3-ndn image to Docker Hub, it will be necessary to change the repository in line #1 of the Dockerfile (FROM ubuntu18-ns3-ndn:latest);
 
 docker build \
 --build-arg username=${USER} \
