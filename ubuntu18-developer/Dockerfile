@@ -8,9 +8,10 @@ ARG uid
 ARG gid
 
 RUN groupadd -g $gid $username
-RUN useradd -m -u $uid -g $gid -s /bin/bash $username
+RUN useradd -ms /bin/bash --gid $gid --uid $uid $username && adduser $username sudo && echo -n "$username:senha" | chpasswd
 
-RUN chown -R $username /simulators
+RUN chown -R $username /simulators/
+RUN chmod 777 -R /simulators/
 
 USER $username
 WORKDIR /home/$username
