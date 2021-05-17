@@ -177,3 +177,19 @@ RUN apt update && \
 	apt clean && \
 	rm -rf /var/lib/apt/lists/*
 
+# Compiling Text Editors
+RUN apt update && \
+	apt install -y \
+	gedit \
+	vim \
+	nano &&\
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
+
+# Compiling Octave
+RUN apt update && \
+	apt install -y \
+	apt install octave \
+	apt install liboctave-dev &&\
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
