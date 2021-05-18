@@ -189,7 +189,7 @@ RUN apt update && \
 # Compiling Octave
 RUN apt update && \
 	apt install -y \
-	apt install octave \
-	apt install liboctave-dev &&\
+	octave \
+	liboctave-dev && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
