@@ -5,7 +5,7 @@ docker-ns3-ndn
 
 1. Build the ubuntu18-ns3-ndn Dockerfile to create the Ubuntu image with all the required dependencies to run NS-3 and ndnSIM;
 
-```bash
+```shell
 docker build -t ubuntu18-ns3-ndn .
 ```
 
@@ -20,13 +20,16 @@ docker build \
 ```
 
 3. Run the ubuntu18-developer. It is recommended to create volumes to persist the "scratch" folder data.
-```
+
+```shell
 docker run -it --rm --name container_dev -e DISPLAY=$DISPLAY \
 -v "${HOME}/.Xauthority:${HOME}/.Xauthority:rw" \
 -v "/tmp/.X11-unix:/tmp/.X11-unix" \
 ubuntu18-developer
 ```
 
-Note:  Much more substantial information about ns-3 and ndnSim can be found at
+Note:  Much more substantial information about ns-3 and ndnSim can be found at:
+
 http://www.nsnam.org
+
 https://ndnsim.net/current/
