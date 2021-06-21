@@ -1,6 +1,6 @@
 docker-ns3-ndn
 ==============
-** Recommended OS: Debian 10 **
+**Recommended OS: Debian 10**
 
 ## Table of Contents:
 
@@ -53,9 +53,9 @@ docker build \
 --build-arg uid=$(id -u) \
 --build-arg gid=$(id -g) \
 -t ubuntu18-developer .
+```
 
-
-** Note:  Much more substantial information about ns-3 and ndnSIM can be found at: **
+**Note:  Much more substantial information about ns-3 and ndnSIM can be found at:**
 
 `http://www.nsnam.org`
 
