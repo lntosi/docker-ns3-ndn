@@ -2,14 +2,17 @@ docker-ns3-ndn
 ==============
 
 ## Follow these instructions to run this project:
+# Recommended OS: Debian 10
 
-1) Build the ubuntu18-ns3-ndn Dockerfile to create the Ubuntu image with all the required dependencies to run NS-3 and ndnSIM;
+1) Download this repository to your computer;
+
+2) Access the ubuntu18-ns3-ndn Dockerfile folder to build the Ubuntu image with all the required dependencies to run NS-3 and ndnSIM;
 
 ```shell
 docker build -t ubuntu18-ns3-ndn .
 ```
 
-2) Build the ubuntu18-developer Dockerfile. If you have uploaded the ubuntu18-ns3-ndn image to Docker Hub, it will be necessary to change the repository in line #1 of the Dockerfile (FROM ubuntu18-ns3-ndn:latest);
+3) Access the the ubuntu18-developer Dockerfile folder to build the image that you will use. If you have uploaded the ubuntu18-ns3-ndn image to Docker Hub, it will be necessary to change the repository in line #1 of the Dockerfile (FROM ubuntu18-ns3-ndn:latest);
 
 ```shell
 docker build \
