@@ -3,16 +3,25 @@ MAINTAINER Lucas Tosi <lntosi@hotmail.com>
 LABEL Description="Docker image for NS-3 and ndnSIM"
 ENV DEBIAN_FRONTEND noninteractive
 
-# Pre-requisites:
-RUN apt-get update && \
-	apt-get install -y \
+# Compiling Text Editors and other tools
+RUN apt update && \
+	apt install -y \
 	wget \
 	sudo \
-	apt-utils \
 	curl \
+	apt-utils \
 	net-tools \
 	wireshark \
 	gnuplot \
+	gedit \
+	vim \
+	nano &&\
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
+
+# Pre-requisites:
+RUN apt-get update && \
+	apt-get install -y \
 	gcc \
 	g++ \
 	python \
@@ -175,15 +184,6 @@ RUN apt update && \
 	apt install -y \
 	code && \
 	apt clean && \
-	rm -rf /var/lib/apt/lists/*
-
-# Compiling Text Editors
-RUN apt update && \
-	apt install -y \
-	gedit \
-	vim \
-	nano &&\
-	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
 # Compiling Octave
