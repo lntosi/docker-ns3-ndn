@@ -2,6 +2,8 @@ FROM ubuntu:18.04
 MAINTAINER Lucas Tosi <lntosi@hotmail.com>
 LABEL Description="Docker image for NS-3 and ndnSIM"
 ENV DEBIAN_FRONTEND noninteractive
+ENV TZ=America/Sao_Paulo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Compiling Text Editors and other tools
 RUN apt update && \
@@ -115,7 +117,7 @@ RUN mkdir -p -m 777 /simulators && \
     cd /simulators/source/ns-3.30.1/ && \
     ./waf -d optimized configure && \
     ./waf && \
-    ./waf configure --enable-examples --enable-tests && \
+    ./waf configure --build-profile=optimized --enable-examples --enable-tests && \
     ./waf build && \
     cd /simulators/source/netanim-3.108 && \
     make clean && \
