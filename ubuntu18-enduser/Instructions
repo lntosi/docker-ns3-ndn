@@ -3,10 +3,10 @@ docker build \
 --build-arg username=${USER} \
 --build-arg uid=$(id -u) \
 --build-arg gid=$(id -g) \
--t ubuntu18-developer .
+-t ubuntu18-enduser .
 
 How to run the container:
-docker run -it --rm --name container_dev -e DISPLAY=$DISPLAY \
+docker run -it --rm --name container_enduser -e DISPLAY=$DISPLAY \
 -v "${HOME}/.Xauthority:${HOME}/.Xauthority:rw" \
 -v "/tmp/.X11-unix:/tmp/.X11-unix" \
-ubuntu18-developer
+ubuntu18-enduser
