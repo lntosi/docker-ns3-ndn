@@ -105,34 +105,34 @@ RUN pip3 install distro \
 
 # NS-3:
 RUN mkdir -p -m 777 /simulators && \
-    cd /simulators/ && \
-    git clone https://gitlab.com/nsnam/bake && \
-    export BAKE_HOME=/simulators/bake && \
-    export PATH=$PATH:$BAKE_HOME && \
-    export PYTHONPATH=$PYTHONPATH:$BAKE_HOME && \
-    bake.py check && \
-    bake.py configure -e ns-3.30.1 && \
-    bake.py show && \
-    bake.py deploy && \
-    cd /simulators/source/ns-3.30.1/ && \
-    ./waf -d optimized configure && \
-    ./waf && \
-    ./waf configure --build-profile=optimized --enable-examples --enable-tests && \
-    ./waf build && \
-    cd /simulators/source/netanim-3.108 && \
-    make clean && \
-    qmake NetAnim.pro && \
-    make
+	cd /simulators/ && \
+	git clone https://gitlab.com/nsnam/bake && \
+	export BAKE_HOME=/simulators/bake && \
+	export PATH=$PATH:$BAKE_HOME && \
+	export PYTHONPATH=$PYTHONPATH:$BAKE_HOME && \
+	bake.py check && \
+	bake.py configure -e ns-3.30.1 && \
+	bake.py show && \
+	bake.py deploy && \
+	cd /simulators/source/ns-3.30.1/ && \
+	./waf -d optimized configure && \
+	./waf && \
+	./waf configure --build-profile=optimized --enable-examples --enable-tests && \
+	./waf build && \
+	cd /simulators/source/netanim-3.108 && \
+	make clean && \
+	qmake NetAnim.pro && \
+	make
 
 # Compiling and running ndnSIM
 RUN mkdir -p -m 777 /simulators/ndnSIM && \
-    cd /simulators/ndnSIM/ && \
-    git clone https://github.com/named-data-ndnSIM/ns-3-dev.git ns-3 && \
-    git clone https://github.com/named-data-ndnSIM/pybindgen.git pybindgen && \
-    git clone --recursive https://github.com/named-data-ndnSIM/ndnSIM.git ns-3/src/ndnSIM && \
-    cd ns-3 && \
-    ./waf -d optimized configure --enable-examples && \
-    ./waf
+	cd /simulators/ndnSIM/ && \
+	git clone https://github.com/named-data-ndnSIM/ns-3-dev.git ns-3 && \
+	git clone https://github.com/named-data-ndnSIM/pybindgen.git pybindgen && \
+	git clone --recursive https://github.com/named-data-ndnSIM/ndnSIM.git ns-3/src/ndnSIM && \
+	cd ns-3 && \
+	./waf -d optimized configure --enable-examples && \
+	./waf
 
 # Compiling VSCODE
 RUN apt update && \
