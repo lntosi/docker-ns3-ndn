@@ -131,7 +131,7 @@ RUN mkdir -p -m 777 /simulators/ndnSIM && \
 	git clone https://github.com/named-data-ndnSIM/pybindgen.git pybindgen && \
 	git clone --recursive https://github.com/named-data-ndnSIM/ndnSIM.git ns-3/src/ndnSIM && \
 	cd ns-3 && \
-	./waf -d optimized configure --enable-examples && \
+	./waf configure --build-profile=optimized --enable-examples --enable-tests && \
 	./waf
 
 # Compiling VSCODE
