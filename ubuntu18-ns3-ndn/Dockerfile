@@ -17,7 +17,8 @@ RUN apt update && \
 	gnuplot \
 	gedit \
 	vim \
-	nano &&\
+	nano \
+	tmux &&\
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
