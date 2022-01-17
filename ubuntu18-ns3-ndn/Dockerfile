@@ -5,24 +5,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=America/Sao_Paulo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-# Compiling Text Editors and other tools
-RUN apt update && \
-	apt install -y \
-	wget \
-	sudo \
-	curl \
-	apt-utils \
-	net-tools \
-	wireshark \
-	gnuplot \
-	gedit \
-	vim \
-	nano \
-	screen \
-	tmux &&\
-	apt-get clean && \
-	rm -rf /var/lib/apt/lists/*
-
 # Pre-requisites:
 RUN apt-get update && \
 	apt-get install -y \
@@ -195,5 +177,22 @@ RUN apt update && \
 	apt install -y \
 	octave \
 	liboctave-dev && \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
+	
+# Compiling Text Editors and other tools
+RUN apt update && \
+	apt install -y \
+	sudo \
+	curl \
+	apt-utils \
+	net-tools \
+	wireshark \
+	gnuplot \
+	gedit \
+	vim \
+	nano \
+	screen \
+	tmux &&\
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
