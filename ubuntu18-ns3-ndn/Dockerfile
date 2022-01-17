@@ -18,6 +18,7 @@ RUN apt update && \
 	gedit \
 	vim \
 	nano \
+	screen \
 	tmux &&\
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
