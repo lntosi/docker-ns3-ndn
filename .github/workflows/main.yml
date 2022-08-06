@@ -1,0 +1,37 @@
+name: Pipeline to update the Docker Image
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+
+  Update Process:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Docker Login
+        uses: docker/login-action@v2.0.0
+        with:
+          username: ${{secrets.DOCKERHUB_USER}}
+          password: ${{secrets.DOCKERHUB_PWD}}
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3.1.1
+        with:
+          file: ./ubuntu18-ns3-ndn/Dockerfile
+          context: ./ubuntu18-ns3-ndn
+          push: true
+          tags: |
+            lntosi/docker-ns3-ndn:latest
+            lntosi/docker-ns3-ndn:v${{github.run_number}}
