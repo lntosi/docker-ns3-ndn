@@ -33,5 +33,5 @@ jobs:
           context: ./ubuntu18-ns3-ndn
           push: true
           tags: |
-            lntosi/docker-ns3-ndn:latest
-            lntosi/docker-ns3-ndn:v${{github.run_number}}
+            lntosi/ubuntu18-ns3-ndn:latest
+            lntosi/ubuntu18-ns3-ndn:v${{github.run_number}}
